@@ -1,0 +1,44 @@
+
+
+.dashboard{
+  background: $lightOrange;
+
+  height: 100%;
+  position: relative;
+
+    @mixin atLarge {
+      min-height: 1000px;
+      height: 100%;
+    }
+    @mixin atMedium {
+      min-height: 800px;
+      height: 100%;
+    }
+
+    &__header{
+      width: 100%;
+      background: #fff;
+      padding: 2em 3em;
+
+      &__column {
+        float: left;
+        width: 50%;
+      }
+      &__column i{
+        float: right;
+        font-size: 42px;
+        cursor: pointer;
+      }
+      &__title{
+        &__h1{
+          margin: 0;
+        }
+      }
+    }
+    &__content{
+      padding: 2em 3em;
+    }
+    &__footer{
+
+    }
+}

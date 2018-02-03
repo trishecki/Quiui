@@ -1,0 +1,49 @@
+.edit-dropdown{
+  position: absolute;
+  width: 20%;
+  min-height: 500px;
+  background: $lightRosa;
+  padding: 1em;
+  z-index: 2;
+  right: 0;
+  display: none;
+  
+    &__title{
+      position: relative;
+      &__cap{
+        position: relative;
+        width: 70%;
+        float: left;
+        &__h2{
+          font-size: 18px;
+          margin: 0;
+        }
+      }
+      &__close{
+        position: relative;
+        float: left;
+        width: 30%;
+        font-size: 15px;
+      }
+      &__close i{
+        float: right;
+        font-size: 23px;
+        cursor: pointer;
+      }
+    }
+
+    &__content__list{
+      list-style-type: none;
+      padding: 0;
+    }
+    &__content__list h3{
+      margin: 1em 0 .5em;
+      cursor: default;
+    }
+    &__content__list li{
+      cursor: pointer;
+    }
+}
+.show{
+  display: block !important;
+}
