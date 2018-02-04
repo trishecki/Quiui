@@ -1,5 +1,3 @@
-.module-soundcloud{
-  width: 200px;
-  height: 200px;
+.module_column_soundcloud{
   background: $brightOrange;
 }

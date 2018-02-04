@@ -2,7 +2,6 @@
 
 .dashboard{
   background: $lightOrange;
-
   height: 100%;
   position: relative;
 
@@ -37,6 +36,7 @@
     }
     &__content{
       padding: 2em 3em;
+      position: relative;
     }
     &__footer{
 

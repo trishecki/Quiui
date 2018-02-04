@@ -54,14 +54,19 @@
 
 	var _AddAPI2 = _interopRequireDefault(_AddAPI);
 
+	var _RemoveAPI = __webpack_require__(4);
+
+	var _RemoveAPI2 = _interopRequireDefault(_RemoveAPI);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var dropwdown = new _DropDown2.default();
 	var addapi = new _AddAPI2.default();
+	var removeapi = new _RemoveAPI2.default();
 
-	addapi.facebook();
-	addapi.twitter();
-	addapi.soundcloud();
+	addapi.append();
+	addapi.remove();
+	removeapi.delete();
 
 /***/ }),
 /* 1 */
@@ -84,7 +89,6 @@
 	var DropDown = function DropDown() {
 	  _classCallCheck(this, DropDown);
 
-	  console.log("Working DropDown");
 	  (0, _jquery2.default)("#edit-open").click(function () {
 	    console.log("open");
 	    (0, _jquery2.default)("#side-bar").addClass("show");
@@ -9940,30 +9944,64 @@
 	var AddAPI = function () {
 	  function AddAPI() {
 	    _classCallCheck(this, AddAPI);
+
+	    this.add_facebook = (0, _jquery2.default)("#add-facebook");
+	    this.add_twitter = (0, _jquery2.default)("#add-twitter");
+	    this.add_soundcloud = (0, _jquery2.default)("#add-soundcloud");
+
+	    this.module_column = '<div class="module-column" id="module"><div class="module-column__header">';
+	    this.column_close_icon = '<i class="fa fa-bars column__close-icon" aria-hidden="true" id="close-column"></i></div>';
+	    this.end_column = '</div>';
 	  }
 
 	  _createClass(AddAPI, [{
-	    key: "facebook",
-	    value: function facebook() {
-	      console.log("Add API");
-	      (0, _jquery2.default)("#add-facebook").click(function () {
-	        (0, _jquery2.default)("#content-port").append('<div class="module-column module-facebook"></div>');
+	    key: "append",
+	    value: function append() {
+
+	      var column_close_icon = this.column_close_icon;
+	      var end_column = this.end_column;
+	      var sm_module = this.sm_module;
+	      var module_column = this.module_column;
+
+	      var counter = 0;
+	      var IDCounter = 0;
+
+	      this.add_facebook.click(function () {
+	        if (counter >= 1) {
+	          console.log("STOP");
+	        } else {
+	          IDCounter++;
+	          (0, _jquery2.default)("#content-port").append('<div class="module-column" id="module' + IDCounter + '"><div class="module-column__header">' + column_close_icon + end_column);
+	          console.log(counter);
+	        }
+	      });
+
+	      this.add_twitter.click(function () {
+	        if (counter >= 1) {
+	          console.log("STOP");
+	        } else {
+	          IDCounter++;
+	          (0, _jquery2.default)("#content-port").append('<div class="module-column" id="module' + IDCounter + '"><div class="module-column__header">' + column_close_icon + end_column);
+	          console.log(counter);
+	        }
+	      });
+
+	      this.add_soundcloud.click(function () {
+	        if (counter >= 1) {
+	          console.log("STOP");
+	        } else {
+	          IDCounter++;
+	          (0, _jquery2.default)("#content-port").append('<div class="module-column" id="module' + IDCounter + '"><div class="module-column__header">' + column_close_icon + end_column);
+	          console.log(counter);
+	        }
 	      });
 	    }
 	  }, {
-	    key: "twitter",
-	    value: function twitter() {
-	      console.log("Add API");
-	      (0, _jquery2.default)("#add-twitter").click(function () {
-	        (0, _jquery2.default)("#content-port").append('<div class="module-column module-twitter"></div>');
-	      });
-	    }
-	  }, {
-	    key: "soundcloud",
-	    value: function soundcloud() {
-	      console.log("Add API");
-	      (0, _jquery2.default)("#add-soundcloud").click(function () {
-	        (0, _jquery2.default)("#content-port").append('<div class="module-column module-soundcloud"></div>');
+	    key: "remove",
+	    value: function remove() {
+	      (0, _jquery2.default)("#close_fb").click(function () {
+	        console.log("Remove");
+	        (0, _jquery2.default)(".module-column").remove;
 	      });
 	    }
 	  }]);
@@ -9972,6 +10010,41 @@
 	}();
 
 	exports.default = AddAPI;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _jquery = __webpack_require__(2);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var RemoveAPI = function () {
+	  function RemoveAPI() {
+	    _classCallCheck(this, RemoveAPI);
+	  }
+
+	  _createClass(RemoveAPI, [{
+	    key: 'delete',
+	    value: function _delete() {}
+	  }]);
+
+	  return RemoveAPI;
+	}();
+
+	exports.default = RemoveAPI;
 
 /***/ })
 /******/ ]);
