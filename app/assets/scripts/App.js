@@ -8,6 +8,7 @@ var addapi = new AddAPI();
 var removeapi = new RemoveAPI();
 
 
-addapi.append();
-addapi.remove();
-removeapi.delete();
+// addapi.create();
+addapi.facebook("mod_fb", "module_column_facebook");
+addapi.twitter();
+addapi.soundcloud();

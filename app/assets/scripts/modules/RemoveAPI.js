@@ -2,11 +2,11 @@ import $ from 'jquery';
 
 class RemoveAPI {
   constructor() {
-    
+
 
   }
-  delete(){
-
+  facebook(){
+    
   }
 }
 

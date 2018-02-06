@@ -64,9 +64,10 @@
 	var addapi = new _AddAPI2.default();
 	var removeapi = new _RemoveAPI2.default();
 
-	addapi.append();
-	addapi.remove();
-	removeapi.delete();
+	// addapi.create();
+	addapi.facebook("mod_fb", "module_column_facebook");
+	addapi.twitter();
+	addapi.soundcloud();
 
 /***/ }),
 /* 1 */
@@ -9949,59 +9950,69 @@
 	    this.add_twitter = (0, _jquery2.default)("#add-twitter");
 	    this.add_soundcloud = (0, _jquery2.default)("#add-soundcloud");
 
-	    this.module_column = '<div class="module-column" id="module"><div class="module-column__header">';
-	    this.column_close_icon = '<i class="fa fa-bars column__close-icon" aria-hidden="true" id="close-column"></i></div>';
-	    this.end_column = '</div>';
+	    this.module_column_content = '<div class="module-column__content ' + this.module_column_class + '">FACEBOOK</div>';
+	    this.module_column_header = '<div class="module-column__header">HEADER</div>';
+
+	    this.module_column = '<div class="module-column" id="' + this.module_column_id + '">' + this.module_column_header + this.module_column_content + '</div>';
 	  }
 
 	  _createClass(AddAPI, [{
-	    key: "append",
-	    value: function append() {
+	    key: "facebook",
+	    value: function facebook(module_column_id, module_column_class) {
 
-	      var column_close_icon = this.column_close_icon;
-	      var end_column = this.end_column;
-	      var sm_module = this.sm_module;
+	      this.module_column_id = module_column_id;
+	      this.module_column_class = module_column_class;
+
+	      console.log(module_column_id);
+
 	      var module_column = this.module_column;
 
-	      var counter = 0;
-	      var IDCounter = 0;
-
+	      var counter_fb = 0;
 	      this.add_facebook.click(function () {
-	        if (counter >= 1) {
-	          console.log("STOP");
+	        if (counter_fb <= 0) {
+	          (0, _jquery2.default)("#content-port").append(module_column);
+	          (0, _jquery2.default)("#add-facebook").addClass("edit-dropdown--li--active");
+	          counter_fb++;
 	        } else {
-	          IDCounter++;
-	          (0, _jquery2.default)("#content-port").append('<div class="module-column" id="module' + IDCounter + '"><div class="module-column__header">' + column_close_icon + end_column);
-	          console.log(counter);
+	          (0, _jquery2.default)("div").remove("#mod_fb");
+	          (0, _jquery2.default)("#add-facebook").removeClass("edit-dropdown--li--active");
+	          counter_fb--;
 	        }
-	      });
-
-	      this.add_twitter.click(function () {
-	        if (counter >= 1) {
-	          console.log("STOP");
-	        } else {
-	          IDCounter++;
-	          (0, _jquery2.default)("#content-port").append('<div class="module-column" id="module' + IDCounter + '"><div class="module-column__header">' + column_close_icon + end_column);
-	          console.log(counter);
-	        }
-	      });
-
-	      this.add_soundcloud.click(function () {
-	        if (counter >= 1) {
-	          console.log("STOP");
-	        } else {
-	          IDCounter++;
-	          (0, _jquery2.default)("#content-port").append('<div class="module-column" id="module' + IDCounter + '"><div class="module-column__header">' + column_close_icon + end_column);
-	          console.log(counter);
-	        }
+	        console.log(counter_fb);
 	      });
 	    }
 	  }, {
-	    key: "remove",
-	    value: function remove() {
-	      (0, _jquery2.default)("#close_fb").click(function () {
-	        console.log("Remove");
-	        (0, _jquery2.default)(".module-column").remove;
+	    key: "twitter",
+	    value: function twitter() {
+	      var counter_tw = 0;
+	      this.add_twitter.click(function () {
+	        if (counter_tw <= 0) {
+	          (0, _jquery2.default)("#content-port").append('<div class="module-column" id="mod_tw">Twitter</div>');
+	          (0, _jquery2.default)("#add-twitter").addClass("edit-dropdown--li--active");
+	          counter_tw++;
+	        } else {
+	          (0, _jquery2.default)("div").remove("#mod_tw");
+	          (0, _jquery2.default)("#add-twitter").removeClass("edit-dropdown--li--active");
+	          counter_tw--;
+	        }
+	        console.log(counter_tw);
+	      });
+	    }
+	  }, {
+	    key: "soundcloud",
+	    value: function soundcloud() {
+	      var counter_sc = 0;
+	      this.add_soundcloud.click(function () {
+	        if (counter_sc <= 0) {
+	          (0, _jquery2.default)("#content-port").append('<div class="module-column" id="mod_sc">Soundcloud</div>');
+	          (0, _jquery2.default)("#add-soundcloud").addClass("edit-dropdown--li--active");
+	          counter_sc++;
+	        } else {
+	          (0, _jquery2.default)("div").remove("#mod_sc");
+	          (0, _jquery2.default)("#add-soundcloud").removeClass("edit-dropdown--li--active");
+	          counter_sc--;
+	        }
+	        console.log(counter_sc);
 	      });
 	    }
 	  }]);
@@ -10037,8 +10048,8 @@
 	  }
 
 	  _createClass(RemoveAPI, [{
-	    key: 'delete',
-	    value: function _delete() {}
+	    key: 'facebook',
+	    value: function facebook() {}
 	  }]);
 
 	  return RemoveAPI;

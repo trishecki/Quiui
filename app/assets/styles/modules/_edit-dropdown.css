@@ -7,7 +7,7 @@
   z-index: 2;
   right: 0;
   display: none;
-  
+
     &__title{
       position: relative;
       &__cap{
@@ -31,7 +31,9 @@
         cursor: pointer;
       }
     }
-
+    &--li--active{
+      color: red;
+    }
     &__content__list{
       list-style-type: none;
       padding: 0;
@@ -43,6 +45,7 @@
     &__content__list li{
       cursor: pointer;
     }
+
 }
 .show{
   display: block !important;

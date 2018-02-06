@@ -2,72 +2,69 @@ import $ from 'jquery';
 
 class AddAPI {
   constructor() {
-
     this.add_facebook = $("#add-facebook");
     this.add_twitter = $("#add-twitter");
     this.add_soundcloud = $("#add-soundcloud");
 
 
-    this.module_column = '<div class="module-column" id="module"><div class="module-column__header">';
-    this.column_close_icon = '<i class="fa fa-bars column__close-icon" aria-hidden="true" id="close-column"></i></div>';
-    this.end_column = '</div>';
+    this.module_column_content = '<div class="module-column__content ' + this.module_column_class + '">FACEBOOK</div>';
+    this.module_column_header = '<div class="module-column__header">HEADER</div>';
 
-
+    this.module_column = '<div class="module-column" id="' + this.module_column_id +'">' + this.module_column_header + this.module_column_content + '</div>';
   }
-  append(){
+  facebook(module_column_id, module_column_class){
 
+    this.module_column_id = module_column_id;
+    this.module_column_class = module_column_class;
 
-    let column_close_icon = this.column_close_icon;
-    let end_column = this.end_column;
-    let sm_module = this.sm_module;
+    console.log(module_column_id);
+
     let module_column = this.module_column;
 
-    let counter = 0;
-    let IDCounter = 0;
-
-
+    let counter_fb = 0;
     this.add_facebook.click(function(){
-      if (counter >= 1) {
-        console.log("STOP");
-      }else{
-        IDCounter++;
-        $("#content-port").append('<div class="module-column" id="module'+ IDCounter +'"><div class="module-column__header">' + column_close_icon + end_column);
-        console.log(counter);
-
+      if (counter_fb <= 0) {
+        $("#content-port").append(module_column);
+        $("#add-facebook").addClass("edit-dropdown--li--active");
+        counter_fb++;
+      }else {
+        $("div").remove("#mod_fb");
+        $("#add-facebook").removeClass("edit-dropdown--li--active");
+        counter_fb--;
       }
+      console.log(counter_fb);
     });
-
+  }
+  twitter(){
+    let counter_tw = 0;
     this.add_twitter.click(function(){
-      if (counter >= 1) {
-        console.log("STOP");
-      }else{
-        IDCounter++;
-        $("#content-port").append('<div class="module-column" id="module'+ IDCounter +'"><div class="module-column__header">' + column_close_icon + end_column);
-        console.log(counter);
-
+      if (counter_tw <= 0) {
+        $("#content-port").append('<div class="module-column" id="mod_tw">Twitter</div>');
+        $("#add-twitter").addClass("edit-dropdown--li--active");
+        counter_tw++;
+      }else {
+        $("div").remove("#mod_tw");
+        $("#add-twitter").removeClass("edit-dropdown--li--active");
+        counter_tw--;
       }
+      console.log(counter_tw);
     });
-
+  }
+  soundcloud(){
+    let counter_sc = 0;
     this.add_soundcloud.click(function(){
-      if (counter >= 1) {
-        console.log("STOP");
-      }else{
-        IDCounter++;
-        $("#content-port").append('<div class="module-column" id="module'+ IDCounter +'"><div class="module-column__header">' + column_close_icon + end_column);
-        console.log(counter);
-
+      if (counter_sc <= 0) {
+        $("#content-port").append('<div class="module-column" id="mod_sc">Soundcloud</div>');
+        $("#add-soundcloud").addClass("edit-dropdown--li--active");
+        counter_sc++;
+      }else {
+        $("div").remove("#mod_sc");
+        $("#add-soundcloud").removeClass("edit-dropdown--li--active");
+        counter_sc--;
       }
-    });
-
-  }
-  remove(){
-    $("#close_fb").click(function(){
-      console.log("Remove");
-      $(".module-column").remove;
+      console.log(counter_sc);
     });
   }
-
-
 }
 
 export default AddAPI;

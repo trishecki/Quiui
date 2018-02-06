@@ -519,6 +519,7 @@ img {
   z-index: 2;
   right: 0;
   display: none;
+
 }
 
 .edit-dropdown__title{
@@ -547,6 +548,10 @@ img {
   float: right;
   font-size: 23px;
   cursor: pointer;
+}
+
+.edit-dropdown--li--active{
+  color: red;
 }
 
 .edit-dropdown__content__list{
