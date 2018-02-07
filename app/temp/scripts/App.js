@@ -58,16 +58,23 @@
 
 	var _RemoveAPI2 = _interopRequireDefault(_RemoveAPI);
 
+	var _Draggable = __webpack_require__(5);
+
+	var _Draggable2 = _interopRequireDefault(_Draggable);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	var draggable = new _Draggable2.default();
 	var dropwdown = new _DropDown2.default();
 	var addapi = new _AddAPI2.default();
 	var removeapi = new _RemoveAPI2.default();
 
-	// addapi.create();
-	addapi.facebook("mod_fb", "module_column_facebook");
+	addapi.calendar();
+
+	addapi.facebook();
 	addapi.twitter();
 	addapi.soundcloud();
+	draggable.drag();
 
 /***/ }),
 /* 1 */
@@ -9946,31 +9953,55 @@
 	  function AddAPI() {
 	    _classCallCheck(this, AddAPI);
 
+	    this.add_calendar = (0, _jquery2.default)("#add-calendar");
 	    this.add_facebook = (0, _jquery2.default)("#add-facebook");
 	    this.add_twitter = (0, _jquery2.default)("#add-twitter");
 	    this.add_soundcloud = (0, _jquery2.default)("#add-soundcloud");
 
-	    this.module_column_content = '<div class="module-column__content ' + this.module_column_class + '">FACEBOOK</div>';
 	    this.module_column_header = '<div class="module-column__header">HEADER</div>';
-
-	    this.module_column = '<div class="module-column" id="' + this.module_column_id + '">' + this.module_column_header + this.module_column_content + '</div>';
 	  }
 
 	  _createClass(AddAPI, [{
-	    key: "facebook",
-	    value: function facebook(module_column_id, module_column_class) {
+	    key: "calendar",
+	    value: function calendar() {
 
-	      this.module_column_id = module_column_id;
-	      this.module_column_class = module_column_class;
+	      var module_column_id = "mod_cal";
+	      var module_column_class = "module_column_calendar";
 
-	      console.log(module_column_id);
-
-	      var module_column = this.module_column;
+	      var module_column_content = '<div class="module-column__content ' + module_column_class + '">Calendar</div>';
+	      var module_column = '<div class="module-column module-column--small" id="' + module_column_id + '">' + this.module_column_header + module_column_content + '</div>';
 
 	      var counter_fb = 0;
-	      this.add_facebook.click(function () {
+
+	      this.add_calendar.click(function () {
+	        console.log(module_column_id);
 	        if (counter_fb <= 0) {
-	          (0, _jquery2.default)("#content-port").append(module_column);
+	          (0, _jquery2.default)("#content-port__right").append(module_column);
+	          (0, _jquery2.default)("#add-calendar").addClass("edit-dropdown--li--active");
+	          counter_fb++;
+	        } else {
+	          (0, _jquery2.default)("div").remove("#mod_cal");
+	          (0, _jquery2.default)("#add-calendar").removeClass("edit-dropdown--li--active");
+	          counter_fb--;
+	        }
+	        console.log(counter_fb);
+	      });
+	    }
+	  }, {
+	    key: "facebook",
+	    value: function facebook() {
+	      var module_column_id = "mod_fb";
+	      var module_column_class = "module_column_facebook";
+
+	      var module_column_content = '<div class="module-column__content ' + module_column_class + '">Facebook</div>';
+	      var module_column = '<div class="module-column module-column--wide ui-widget-content" id="' + module_column_id + '">' + this.module_column_header + module_column_content + '</div>';
+
+	      var counter_fb = 0;
+
+	      this.add_facebook.click(function () {
+	        console.log(module_column_id);
+	        if (counter_fb <= 0) {
+	          (0, _jquery2.default)("#content-port__left").append(module_column);
 	          (0, _jquery2.default)("#add-facebook").addClass("edit-dropdown--li--active");
 	          counter_fb++;
 	        } else {
@@ -9984,10 +10015,16 @@
 	  }, {
 	    key: "twitter",
 	    value: function twitter() {
+	      var module_column_id = "mod_tw";
+	      var module_column_class = "module_column_twitter";
+
+	      var module_column_content = '<div class="module-column__content ' + module_column_class + '">Twitter</div>';
+	      var module_column = '<div class="module-column module-column--wide" id="' + module_column_id + '">' + this.module_column_header + module_column_content + '</div>';
+
 	      var counter_tw = 0;
 	      this.add_twitter.click(function () {
 	        if (counter_tw <= 0) {
-	          (0, _jquery2.default)("#content-port").append('<div class="module-column" id="mod_tw">Twitter</div>');
+	          (0, _jquery2.default)("#content-port__left").append(module_column);
 	          (0, _jquery2.default)("#add-twitter").addClass("edit-dropdown--li--active");
 	          counter_tw++;
 	        } else {
@@ -10001,10 +10038,16 @@
 	  }, {
 	    key: "soundcloud",
 	    value: function soundcloud() {
+	      var module_column_id = "mod_sc";
+	      var module_column_class = "module_column_soundcloud";
+
+	      var module_column_content = '<div class="module-column__content ' + module_column_class + '">Soundcloud</div>';
+	      var module_column = '<div class="module-column module-column--wide" id="' + module_column_id + '">' + this.module_column_header + module_column_content + '</div>';
+
 	      var counter_sc = 0;
 	      this.add_soundcloud.click(function () {
 	        if (counter_sc <= 0) {
-	          (0, _jquery2.default)("#content-port").append('<div class="module-column" id="mod_sc">Soundcloud</div>');
+	          (0, _jquery2.default)("#content-port__left").append(module_column);
 	          (0, _jquery2.default)("#add-soundcloud").addClass("edit-dropdown--li--active");
 	          counter_sc++;
 	        } else {
@@ -10056,6 +10099,45 @@
 	}();
 
 	exports.default = RemoveAPI;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _jquery = __webpack_require__(2);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Draggable = function () {
+	  function Draggable() {
+	    _classCallCheck(this, Draggable);
+	  }
+
+	  _createClass(Draggable, [{
+	    key: "drag",
+	    value: function drag() {
+	      (0, _jquery2.default)(function () {
+	        (0, _jquery2.default)("#draggable").draggable();
+	      });
+	    }
+	  }]);
+
+	  return Draggable;
+	}();
+
+	exports.default = Draggable;
 
 /***/ })
 /******/ ]);

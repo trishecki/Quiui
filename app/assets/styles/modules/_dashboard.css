@@ -1,7 +1,6 @@
 
 
 .dashboard{
-  background: $lightOrange;
   height: 100%;
   position: relative;
 
@@ -35,8 +34,24 @@
       }
     }
     &__content{
-      padding: 2em 3em;
+
       position: relative;
+      &--left{
+        position: relative;
+        padding: 1em;
+        background: $lightOrange;
+        width: 70%;
+        height: 1000px;
+        float: left;
+      }
+      &--right{
+        position: relative;
+        padding: 1em;
+        background: $redBrown;
+        width: 30%;
+        height: 1000px;
+        float: left;
+      }
     }
     &__footer{
 

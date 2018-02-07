@@ -454,7 +454,6 @@ img {
 }
 
 .dashboard{
-  background: #FFF0E7;
   height: 100%;
   position: relative;
 }
@@ -497,8 +496,25 @@ img {
 }
 
 .dashboard__content{
-  padding: 2em 3em;
   position: relative;
+}
+
+.dashboard__content--left{
+  position: relative;
+  padding: 1em;
+  background: #FFF0E7;
+  width: 70%;
+  height: 1000px;
+  float: left;
+}
+
+.dashboard__content--right{
+  position: relative;
+  padding: 1em;
+  background: #FF9149;
+  width: 30%;
+  height: 1000px;
+  float: left;
 }
 
 .dashboard__footer{
@@ -575,7 +591,6 @@ img {
 .module-column{
   margin: 1em;
   float: left;
-  width: 200px;
 }
 
 .module-column__header{
@@ -597,6 +612,14 @@ img {
   clear: both;
   display: block;
   visibility: hidden;
+}
+
+.module-column--wide{
+  width: 90%;
+}
+
+.module-column--small{
+  width: 90%;
 }
 
 .module-column__content{
