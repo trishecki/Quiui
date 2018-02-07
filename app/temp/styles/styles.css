@@ -504,7 +504,7 @@ img {
   padding: 1em;
   background: #FFF0E7;
   width: 70%;
-  height: 1000px;
+  height: 100%;
   float: left;
 }
 
@@ -634,7 +634,7 @@ img {
 }
 
 .module_column_twitter{
-  background: #56CCF2;
+  background: #1da1f3;
 }
 
 .module_column_soundcloud{

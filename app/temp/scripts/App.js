@@ -9991,8 +9991,9 @@
 	    value: function facebook() {
 	      var module_column_id = "mod_fb";
 	      var module_column_class = "module_column_facebook";
+	      var facebook_api_link = '<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D924777877679452%26id%3D906234006200506&width=790&show_text=true&height=299&appId" width="790" height="299" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>';
 
-	      var module_column_content = '<div class="module-column__content ' + module_column_class + '">Facebook</div>';
+	      var module_column_content = '<div class="module-column__content ' + module_column_class + '">' + facebook_api_link + '</div>';
 	      var module_column = '<div class="module-column module-column--wide ui-widget-content" id="' + module_column_id + '">' + this.module_column_header + module_column_content + '</div>';
 
 	      var counter_fb = 0;
@@ -10016,8 +10017,9 @@
 	    value: function twitter() {
 	      var module_column_id = "mod_tw";
 	      var module_column_class = "module_column_twitter";
+	      var twitter_api_link = '<a class="twitter-timeline" data-width="100%" data-height="500" href="https://twitter.com/TwitterDev/lists/national-parks?ref_src=twsrc%5Etfw">A Twitter List by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>';
 
-	      var module_column_content = '<div class="module-column__content ' + module_column_class + '">Twitter</div>';
+	      var module_column_content = '<div class="module-column__content ' + module_column_class + '">' + twitter_api_link + '</div>';
 	      var module_column = '<div class="module-column module-column--wide" id="' + module_column_id + '">' + this.module_column_header + module_column_content + '</div>';
 
 	      var counter_tw = 0;
@@ -10039,8 +10041,9 @@
 	    value: function soundcloud() {
 	      var module_column_id = "mod_sc";
 	      var module_column_class = "module_column_soundcloud";
+	      var soundcloud_api_link = '<iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/84909211&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>';
 
-	      var module_column_content = '<div class="module-column__content ' + module_column_class + '">Soundcloud</div>';
+	      var module_column_content = '<div class="module-column__content ' + module_column_class + '">' + soundcloud_api_link + '</div>';
 	      var module_column = '<div class="module-column module-column--wide" id="' + module_column_id + '">' + this.module_column_header + module_column_content + '</div>';
 
 	      var counter_sc = 0;

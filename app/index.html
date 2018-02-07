@@ -12,14 +12,10 @@
   <meta name="description" content="Your clarify. One trip away. We create soul restoring journeys that inspire you to be you.">
 
   <link rel="stylesheet" href="temp/styles/styles.css">
-  <style>
-  .draggable { width: 90px; height: 80px; padding: 5px; float: left; margin: 0 10px 10px 0; font-size: .9em; }
-  .ui-widget-header p, .ui-widget-content p { margin: 0; }
-  #snaptarget { height: 140px; }
-  </style>
-
 </head>
 <body>
+  <div id="fb-root"></div>
+
   <header class="site-header">
     <div class="wrapper">
 
@@ -46,13 +42,9 @@
 
         <h3>SOCIAL MEDIA</h3>
           <span><li id="add-facebook">Facebook</li></span>
-
           <span><li id="add-twitter">Twitter</li></span>
-
           <span><li id="add-soundcloud">Soundcloud</li></span>
-
           <span><li id="add-news">News</li></span>
-
           <span><li id="add-spotify">Spotify</li></span>
 
       </ul>
@@ -85,17 +77,11 @@
         </ul>
       </div>
       <div class="dashboard__content--right" id="content-port__right">
-
       </div>
     </div>
-
-
     <div class="dashboard__footer">
-
     </div>
   </div>
-
-
   <footer class="site-footer">
     <div class="wrapper">
 
@@ -105,17 +91,17 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="/assets/scripts/jquery-ui/jquery-ui.min.js"></script>
   <script>
-  $( function() {
-    $( "#sortable" ).sortable({
-      revert: true
+    $( function() {
+      $( "#sortable" ).sortable({
+        revert: true
+      });
+      $( "#draggable" ).draggable({
+        connectToSortable: "#sortable",
+        helper: "clone",
+        revert: "invalid"
+      });
+      $( "ul, li" ).disableSelection();
     });
-    $( "#draggable" ).draggable({
-      connectToSortable: "#sortable",
-      helper: "clone",
-      revert: "invalid"
-    });
-    $( "ul, li" ).disableSelection();
-  } );
   </script>
 </body>
 </html>
