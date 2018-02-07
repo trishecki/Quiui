@@ -9,6 +9,7 @@
     padding: .5em;
     color: #fff;
     position: relative;
+    cursor: move;
     & i{
       float: right;
       cursor: pointer;

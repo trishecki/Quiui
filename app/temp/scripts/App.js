@@ -58,23 +58,22 @@
 
 	var _RemoveAPI2 = _interopRequireDefault(_RemoveAPI);
 
-	var _Draggable = __webpack_require__(5);
-
-	var _Draggable2 = _interopRequireDefault(_Draggable);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var draggable = new _Draggable2.default();
+	// import Draggable from './modules/Draggable.js'
+
+
 	var dropwdown = new _DropDown2.default();
 	var addapi = new _AddAPI2.default();
 	var removeapi = new _RemoveAPI2.default();
+	// var draggable = new Draggable();
+
 
 	addapi.calendar();
 
 	addapi.facebook();
 	addapi.twitter();
 	addapi.soundcloud();
-	draggable.drag();
 
 /***/ }),
 /* 1 */
@@ -10001,7 +10000,7 @@
 	      this.add_facebook.click(function () {
 	        console.log(module_column_id);
 	        if (counter_fb <= 0) {
-	          (0, _jquery2.default)("#content-port__left").append(module_column);
+	          (0, _jquery2.default)("#sortable").append(module_column);
 	          (0, _jquery2.default)("#add-facebook").addClass("edit-dropdown--li--active");
 	          counter_fb++;
 	        } else {
@@ -10024,7 +10023,7 @@
 	      var counter_tw = 0;
 	      this.add_twitter.click(function () {
 	        if (counter_tw <= 0) {
-	          (0, _jquery2.default)("#content-port__left").append(module_column);
+	          (0, _jquery2.default)("#sortable").append(module_column);
 	          (0, _jquery2.default)("#add-twitter").addClass("edit-dropdown--li--active");
 	          counter_tw++;
 	        } else {
@@ -10047,7 +10046,7 @@
 	      var counter_sc = 0;
 	      this.add_soundcloud.click(function () {
 	        if (counter_sc <= 0) {
-	          (0, _jquery2.default)("#content-port__left").append(module_column);
+	          (0, _jquery2.default)("#sortable").append(module_column);
 	          (0, _jquery2.default)("#add-soundcloud").addClass("edit-dropdown--li--active");
 	          counter_sc++;
 	        } else {
@@ -10099,45 +10098,6 @@
 	}();
 
 	exports.default = RemoveAPI;
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _jquery = __webpack_require__(2);
-
-	var _jquery2 = _interopRequireDefault(_jquery);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var Draggable = function () {
-	  function Draggable() {
-	    _classCallCheck(this, Draggable);
-	  }
-
-	  _createClass(Draggable, [{
-	    key: "drag",
-	    value: function drag() {
-	      (0, _jquery2.default)(function () {
-	        (0, _jquery2.default)("#draggable").draggable();
-	      });
-	    }
-	  }]);
-
-	  return Draggable;
-	}();
-
-	exports.default = Draggable;
 
 /***/ })
 /******/ ]);

@@ -47,7 +47,7 @@ class AddAPI {
     this.add_facebook.click(function(){
       console.log(module_column_id);
       if (counter_fb <= 0) {
-        $("#content-port__left").append(module_column);
+        $("#sortable").append(module_column);
         $("#add-facebook").addClass("edit-dropdown--li--active");
         counter_fb++;
       }else {
@@ -68,7 +68,7 @@ class AddAPI {
     let counter_tw = 0;
     this.add_twitter.click(function(){
       if (counter_tw <= 0) {
-        $("#content-port__left").append(module_column);
+        $("#sortable").append(module_column);
         $("#add-twitter").addClass("edit-dropdown--li--active");
         counter_tw++;
       }else {
@@ -90,7 +90,7 @@ class AddAPI {
     let counter_sc = 0;
     this.add_soundcloud.click(function(){
       if (counter_sc <= 0) {
-        $("#content-port__left").append(module_column);
+        $("#sortable").append(module_column);
         $("#add-soundcloud").addClass("edit-dropdown--li--active");
         counter_sc++;
       }else {

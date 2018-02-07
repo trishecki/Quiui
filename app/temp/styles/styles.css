@@ -600,6 +600,7 @@ img {
   padding: .5em;
   color: #fff;
   position: relative;
+  cursor: move;
 }
 
 .module-column__header i{
