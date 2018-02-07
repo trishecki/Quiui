@@ -449,8 +449,20 @@ img {
 .site-header{
   background: #FF6400;
   width: 100%;
-  height: 60px;
+  height: auto;
+  position: relative;
+}
 
+.site-header__column{
+  padding: .5em;
+}
+
+.site-header__column__left{
+  width: 50%;
+}
+
+.site-header__column__left__Logo{
+  width: 25%;
 }
 
 .dashboard{
