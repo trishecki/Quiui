@@ -34,24 +34,29 @@
       }
     }
     &__content{
-
+      display: flex;
       position: relative;
-      &--left{
+      &--side{
         position: relative;
         padding: 1em;
+        
+      }
+      &--left{
         background: $lightOrange;
         width: 70%;
-        height: 100%;
         float: left;
+
+        &__sort-list{
+          padding: 0;
+        }
+
       }
       &--right{
-        position: relative;
-        padding: 1em;
         background: $redBrown;
         width: 30%;
-        height: 1000px;
-        float: left;
+
       }
+
     }
     &__footer{
 

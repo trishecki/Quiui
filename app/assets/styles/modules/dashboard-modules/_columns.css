@@ -1,6 +1,6 @@
 .module-column{
-  margin: 1em;
-  float: left;
+  margin-top: 1em;
+
 
   &__header{
     width: 100%;
@@ -10,6 +10,7 @@
     color: #fff;
     position: relative;
     cursor: move;
+    border-radius: .5em .5em 0 0;
     & i{
       float: right;
       cursor: pointer;
@@ -21,14 +22,19 @@
     }
   }
   &--wide{
-    width: 90%;
+    width: 100%;
   }
   &--small{
-    width: 90%;
+    width: 100%;
   }
   &__content{
     padding: 1em;
     background: #fff;
     height: 100%;
+    border-radius: 0 0 .5em .5em;
   }
+}
+
+iframe{
+  border-radius: .5em;
 }

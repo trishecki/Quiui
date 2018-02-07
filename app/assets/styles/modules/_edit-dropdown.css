@@ -32,7 +32,8 @@
       }
     }
     &--li--active{
-      color: red;
+      color: #203a71;
+      font-weight: 900;
     }
     &__content__list{
       list-style-type: none;
@@ -44,6 +45,7 @@
     }
     &__content__list li{
       cursor: pointer;
+      margin: .5em 0;
     }
 
 }

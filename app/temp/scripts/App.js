@@ -58,17 +58,18 @@
 
 	var _RemoveAPI2 = _interopRequireDefault(_RemoveAPI);
 
+	var _Notes = __webpack_require__(5);
+
+	var _Notes2 = _interopRequireDefault(_Notes);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	// import Draggable from './modules/Draggable.js'
-
 
 	var dropwdown = new _DropDown2.default();
 	var addapi = new _AddAPI2.default();
 	var removeapi = new _RemoveAPI2.default();
-	// var draggable = new Draggable();
+	var notes = new _Notes2.default();
 
-
+	notes.addNotes();
 	addapi.calendar();
 
 	addapi.facebook();
@@ -9957,18 +9958,20 @@
 	    this.add_twitter = (0, _jquery2.default)("#add-twitter");
 	    this.add_soundcloud = (0, _jquery2.default)("#add-soundcloud");
 
-	    this.module_column_header = '<div class="module-column__header">HEADER</div>';
+	    //
+	    // let module_column_header = '<div class="module-column__header">HEADER</div>';
 	  }
 
 	  _createClass(AddAPI, [{
 	    key: "calendar",
 	    value: function calendar() {
-
+	      var module_column_header = '<div class="module-column__header">Calendar</div>';
 	      var module_column_id = "mod_cal";
 	      var module_column_class = "module_column_calendar";
+	      var google_calendar_api = '<iframe src="https://calendar.google.com/calendar/embed?src=tris_hecki%40web.de&ctz=Europe%2FAmsterdam" style="border: 0" width="100%" height="300" frameborder="0" scrolling="no"></iframe>';
 
-	      var module_column_content = '<div class="module-column__content ' + module_column_class + '">Calendar</div>';
-	      var module_column = '<div class="module-column module-column--small" id="' + module_column_id + '">' + this.module_column_header + module_column_content + '</div>';
+	      var module_column_content = '<div class="module-column__content ' + module_column_class + '">' + google_calendar_api + '</div>';
+	      var module_column = '<div class="module-column module-column--small" id="' + module_column_id + '">' + module_column_header + module_column_content + '</div>';
 
 	      var counter_fb = 0;
 
@@ -9989,12 +9992,13 @@
 	  }, {
 	    key: "facebook",
 	    value: function facebook() {
+	      var module_column_header = '<div class="module-column__header">Facebook</div>';
 	      var module_column_id = "mod_fb";
 	      var module_column_class = "module_column_facebook";
-	      var facebook_api_link = '<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D924777877679452%26id%3D906234006200506&width=790&show_text=true&height=299&appId" width="790" height="299" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>';
+	      var facebook_api_link = '<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D924777877679452%26id%3D906234006200506&width=790&show_text=true&height=299&appId" width="100%" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>';
 
 	      var module_column_content = '<div class="module-column__content ' + module_column_class + '">' + facebook_api_link + '</div>';
-	      var module_column = '<div class="module-column module-column--wide ui-widget-content" id="' + module_column_id + '">' + this.module_column_header + module_column_content + '</div>';
+	      var module_column = '<div class="module-column module-column--wide ui-widget-content" id="' + module_column_id + '">' + module_column_header + module_column_content + '</div>';
 
 	      var counter_fb = 0;
 
@@ -10015,12 +10019,13 @@
 	  }, {
 	    key: "twitter",
 	    value: function twitter() {
+	      var module_column_header = '<div class="module-column__header">Twitter</div>';
 	      var module_column_id = "mod_tw";
 	      var module_column_class = "module_column_twitter";
 	      var twitter_api_link = '<a class="twitter-timeline" data-width="100%" data-height="500" href="https://twitter.com/TwitterDev/lists/national-parks?ref_src=twsrc%5Etfw">A Twitter List by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>';
 
 	      var module_column_content = '<div class="module-column__content ' + module_column_class + '">' + twitter_api_link + '</div>';
-	      var module_column = '<div class="module-column module-column--wide" id="' + module_column_id + '">' + this.module_column_header + module_column_content + '</div>';
+	      var module_column = '<div class="module-column module-column--wide" id="' + module_column_id + '">' + module_column_header + module_column_content + '</div>';
 
 	      var counter_tw = 0;
 	      this.add_twitter.click(function () {
@@ -10039,12 +10044,13 @@
 	  }, {
 	    key: "soundcloud",
 	    value: function soundcloud() {
+	      var module_column_header = '<div class="module-column__header">Soundcloud</div>';
 	      var module_column_id = "mod_sc";
 	      var module_column_class = "module_column_soundcloud";
 	      var soundcloud_api_link = '<iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/84909211&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>';
 
 	      var module_column_content = '<div class="module-column__content ' + module_column_class + '">' + soundcloud_api_link + '</div>';
-	      var module_column = '<div class="module-column module-column--wide" id="' + module_column_id + '">' + this.module_column_header + module_column_content + '</div>';
+	      var module_column = '<div class="module-column module-column--wide" id="' + module_column_id + '">' + module_column_header + module_column_content + '</div>';
 
 	      var counter_sc = 0;
 	      this.add_soundcloud.click(function () {
@@ -10101,6 +10107,63 @@
 	}();
 
 	exports.default = RemoveAPI;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _jquery = __webpack_require__(2);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Notes = function () {
+	  function Notes() {
+	    _classCallCheck(this, Notes);
+
+	    this.add_notes = (0, _jquery2.default)("#add-notes");
+	    this.counter = 0;
+	  }
+
+	  _createClass(Notes, [{
+	    key: 'addNotes',
+	    value: function addNotes() {
+	      var counter = this.counter;
+	      var module_column_header = '<div class="module-column__header">Notes</div>';
+	      var module_column_class = "module_column_notes";
+	      var module_column_content_input = '<textarea class="notes--textarea" rows="4" cols="50"></textarea>';
+	      var module_column_content = '<div class="module-column__content ' + module_column_class + '">' + module_column_content_input + '</div>';
+	      this.add_notes.click(function () {
+	        console.log("Notes");
+	        if (counter <= 0) {
+	          (0, _jquery2.default)("#content-port__right").append('<div class="module-column module-column--small" id="mod_notes">' + module_column_header + module_column_content + '</div>');
+	          (0, _jquery2.default)("#add-notes").addClass("edit-dropdown--li--active");
+	          counter++;
+	        } else {
+	          (0, _jquery2.default)("div").remove("#mod_notes");
+	          (0, _jquery2.default)("#add-notes").removeClass("edit-dropdown--li--active");
+	          counter--;
+	        }
+	        console.log(counter);
+	      });
+	    }
+	  }]);
+
+	  return Notes;
+	}();
+
+	exports.default = Notes;
 
 /***/ })
 /******/ ]);
