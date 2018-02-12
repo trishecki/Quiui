@@ -1,6 +1,6 @@
 .module-column{
   margin-top: 1em;
-
+  transition: all ease 2.5s;
 
   &__header{
     width: 100%;
@@ -33,6 +33,11 @@
     height: 100%;
     border-radius: 0 0 .5em .5em;
   }
+}
+
+.module-column--appear{
+  height: 100%;
+  padding: 1em;
 }
 
 iframe{

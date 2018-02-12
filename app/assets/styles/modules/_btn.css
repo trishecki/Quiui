@@ -1,3 +1,17 @@
 .btn {
-
+  padding: .5em;
+  background: #333;
+  border-radius: .5em;
+  color: #fff;
+  font-size: .8em;
+  font-weight: 500;
+  transition: padding .5s;
+    & a{
+      color: #fff;
+      text-decoration: none;
+    }
+    &:hover{
+      padding: .7em;
+      font-weight: 700;
+    }
 }

@@ -39,7 +39,7 @@
       &--side{
         position: relative;
         padding: 1em;
-        
+
       }
       &--left{
         background: $lightOrange;
@@ -52,7 +52,7 @@
 
       }
       &--right{
-        background: $redBrown;
+        background: #ffeadc;
         width: 30%;
 
       }

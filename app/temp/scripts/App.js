@@ -62,15 +62,21 @@
 
 	var _Notes2 = _interopRequireDefault(_Notes);
 
+	var _Appointments = __webpack_require__(6);
+
+	var _Appointments2 = _interopRequireDefault(_Appointments);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var dropwdown = new _DropDown2.default();
 	var addapi = new _AddAPI2.default();
 	var removeapi = new _RemoveAPI2.default();
 	var notes = new _Notes2.default();
+	var appointments = new _Appointments2.default();
 
 	notes.addNotes();
 	addapi.calendar();
+	appointments.addAppointments();
 
 	addapi.facebook();
 	addapi.twitter();
@@ -99,9 +105,13 @@
 
 	  (0, _jquery2.default)("#edit-open").click(function () {
 	    console.log("open");
-	    (0, _jquery2.default)("#side-bar").addClass("show");
+	    (0, _jquery2.default)("#side-bar").toggleClass("show");
 	  });
 	  (0, _jquery2.default)("#edit-close").click(function () {
+	    console.log("close");
+	    (0, _jquery2.default)("#side-bar").removeClass("show");
+	  });
+	  (0, _jquery2.default)(".dashboard__content").click(function () {
 	    console.log("close");
 	    (0, _jquery2.default)("#side-bar").removeClass("show");
 	  });
@@ -10164,6 +10174,67 @@
 	}();
 
 	exports.default = Notes;
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _jquery = __webpack_require__(2);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Appointments = function () {
+	  function Appointments() {
+	    _classCallCheck(this, Appointments);
+
+	    this.add_appointments = (0, _jquery2.default)("#add-appointments");
+	    this.counter = 0;
+	  }
+
+	  _createClass(Appointments, [{
+	    key: 'addAppointments',
+	    value: function addAppointments() {
+	      var counter = this.counter;
+	      var module_column_header = '<div class="module-column__header">Appointments</div>';
+	      var module_column_class = "module_column_appointments";
+	      var module_column_content_text = '<p><h4 class="appointments__input-title">Topic:</h4><textarea class="appointments--textarea" rows="2" cols="50"></textarea></p>';
+	      var module_column_content_time = '<p><h4 class="appointments__input-title">Time:</h4><input type="time" class="appointments--input"></p>';
+	      var module_column_content_date = '<p><h4 class="appointments__input-title">Date:</h4><input type="date" class="appointments--input"></p>';
+	      var module_column_content_input = module_column_content_date + module_column_content_time + module_column_content_text;
+	      var module_column_content = '<div class="module-column__content ' + module_column_class + '">' + module_column_content_input + '</div>';
+	      this.add_appointments.click(function () {
+	        console.log("Appointments");
+	        if (counter <= 0) {
+	          (0, _jquery2.default)("#content-port__right").append('<div class="module-column module-column--small" id="mod_appointments">' + module_column_header + module_column_content + '</div>');
+	          (0, _jquery2.default)("#add-appointments").addClass("edit-dropdown--li--active");
+	          (0, _jquery2.default)(".module_column_appointments").toggleClass("module-column--appear");
+	          counter++;
+	        } else {
+	          (0, _jquery2.default)("div").remove("#mod_appointments");
+	          (0, _jquery2.default)("#add-appointments").removeClass("edit-dropdown--li--active");
+	          counter--;
+	        }
+	        console.log(counter);
+	      });
+	    }
+	  }]);
+
+	  return Appointments;
+	}();
+
+	exports.default = Appointments;
 
 /***/ })
 /******/ ]);

@@ -4,11 +4,18 @@
   height: auto;
   position: relative;
   &__column{
-    padding: .5em;
+    padding: 1em;
     &__left{
       width: 50%;
+      float: left;
       &__Logo{
         width: 25%;
+      }
+    }
+    &__right{
+      &__button{
+        float: right;
+        transform: translateY(16px);
       }
     }
   }
