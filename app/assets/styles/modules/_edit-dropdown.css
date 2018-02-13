@@ -6,7 +6,7 @@
   padding: 1em;
   z-index: 2;
   right: 0;
-  /* display: none; */
+  overflow: hidden;
   visibility: hidden;
   transition: .2s all ease;
     &__title{
