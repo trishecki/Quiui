@@ -66,6 +66,10 @@
 
 	var _Appointments2 = _interopRequireDefault(_Appointments);
 
+	var _Lightbox = __webpack_require__(7);
+
+	var _Lightbox2 = _interopRequireDefault(_Lightbox);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var dropwdown = new _DropDown2.default();
@@ -73,6 +77,7 @@
 	var removeapi = new _RemoveAPI2.default();
 	var notes = new _Notes2.default();
 	var appointments = new _Appointments2.default();
+	var lightbox = new _Lightbox2.default();
 
 	notes.addNotes();
 	addapi.calendar();
@@ -81,6 +86,8 @@
 	addapi.facebook();
 	addapi.twitter();
 	addapi.soundcloud();
+
+	lightbox.navigate();
 
 /***/ }),
 /* 1 */
@@ -10235,6 +10242,63 @@
 	}();
 
 	exports.default = Appointments;
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _jquery = __webpack_require__(2);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Lightbox = function () {
+	  function Lightbox() {
+	    // this.sign_up = $(".sign-up");
+
+	    _classCallCheck(this, Lightbox);
+	  }
+
+	  _createClass(Lightbox, [{
+	    key: "navigate",
+	    value: function navigate() {
+	      (0, _jquery2.default)(".sign-up").click(function () {
+	        (0, _jquery2.default)(".modal").addClass("modal--is--visible");
+	        (0, _jquery2.default)(".modal__login-body").addClass("modal--is--visible");
+	      });
+	      (0, _jquery2.default)(".modal__login-header__close").click(function () {
+	        (0, _jquery2.default)(".modal").removeClass("modal--is--visible");
+	        (0, _jquery2.default)(".modal__signup-body").removeClass("modal--is--visible");
+	        (0, _jquery2.default)(".modal__login-body").removeClass("modal--is--visible");
+	      });
+	      (0, _jquery2.default)("#modal-sign-in").click(function () {
+	        console.log("Hello");
+	        (0, _jquery2.default)(".modal__login-body").addClass("modal--is--visible");
+	        (0, _jquery2.default)(".modal__signup-body").removeClass("modal--is--visible");
+	      });
+	      (0, _jquery2.default)("#modal-sign-up").click(function () {
+	        console.log("Hello");
+	        (0, _jquery2.default)(".modal__signup-body").addClass("modal--is--visible");
+	        (0, _jquery2.default)(".modal__login-body").removeClass("modal--is--visible");
+	      });
+	    }
+	  }]);
+
+	  return Lightbox;
+	}();
+
+	exports.default = Lightbox;
 
 /***/ })
 /******/ ]);
