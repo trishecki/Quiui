@@ -24,7 +24,6 @@
       }
       &__close{
         float: left;
-        text-align: right;
         width: 50%;
       }
     }
@@ -56,6 +55,28 @@
       float: left;
     }
   }
+}
+.modal__login-header__close-icon{
+  float: right;
+  background: #333;
+  height: 5px;
+  width: 30px;
+  transform: rotate(45deg);
+  &:hover{
+    animation-name: rotate-Close;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    transform:  rotate(0deg);
+  }
+}
+.modal__login-header__close-icon::after{
+  content: '';
+  display: block;
+  float: right;
+  background: #333;
+  height: 5px;
+  width: 30px;
+  transform: rotate(-90deg);
 }
 
 .sign-up{

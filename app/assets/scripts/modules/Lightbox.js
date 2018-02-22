@@ -9,7 +9,7 @@ class Lightbox {
       $(".modal").addClass("modal--is--visible");
       $(".modal__login-body").addClass("modal--is--visible");
     });
-    $(".modal__login-header__close").click(function(){
+    $(".modal__login-header__close-icon").click(function(){
       $(".modal").removeClass("modal--is--visible");
       $(".modal__signup-body").removeClass("modal--is--visible");
       $(".modal__login-body").removeClass("modal--is--visible");

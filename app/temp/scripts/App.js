@@ -10277,7 +10277,7 @@
 	        (0, _jquery2.default)(".modal").addClass("modal--is--visible");
 	        (0, _jquery2.default)(".modal__login-body").addClass("modal--is--visible");
 	      });
-	      (0, _jquery2.default)(".modal__login-header__close").click(function () {
+	      (0, _jquery2.default)(".modal__login-header__close-icon").click(function () {
 	        (0, _jquery2.default)(".modal").removeClass("modal--is--visible");
 	        (0, _jquery2.default)(".modal__signup-body").removeClass("modal--is--visible");
 	        (0, _jquery2.default)(".modal__login-body").removeClass("modal--is--visible");
