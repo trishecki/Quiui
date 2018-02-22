@@ -12,6 +12,8 @@
 @import "modules/_grid.css";
 @import "modules/_lightbox.css";
 @import "modules/_front-page__header.css";
+@import "modules/_hamburger.css";
+@import "modules/_animations.css";
 @import "modules/dashboard-modules/_columns.css";
 @import "modules/dashboard-modules/_facebook.css";
 @import "modules/dashboard-modules/_twitter.css";

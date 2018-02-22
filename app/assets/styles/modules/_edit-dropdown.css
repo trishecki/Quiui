@@ -2,13 +2,14 @@
   position: absolute;
   width: 0%;
   min-height: 500px;
-  background: $lightRosa;
+  background: #333;
   padding: 1em;
   z-index: 2;
   right: 0;
   overflow: hidden;
   visibility: hidden;
   transition: .2s all ease;
+  color: #fff;
     &__title{
       position: relative;
       &__cap{
@@ -25,6 +26,14 @@
         float: left;
         width: 30%;
         font-size: 15px;
+        &-color{
+          margin-top: .5em;
+          cursor: pointer;
+          background: #fff !important;
+        }
+        &-color::after{
+          background: #fff !important;
+        }
       }
       &__close i{
         float: right;
@@ -33,7 +42,7 @@
       }
     }
     &--li--active{
-      color: #203a71;
+      color: $MainOrange;
       font-weight: 900;
     }
     &__content__list{

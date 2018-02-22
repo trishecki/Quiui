@@ -11,7 +11,8 @@
       text-decoration: none;
     }
     &:hover{
-      padding: .7em;
-      font-weight: 700;
-    }
+      animation-name: rotate-Sign;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+  }
 }

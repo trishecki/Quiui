@@ -1,0 +1,24 @@
+@keyframes rotate-Sign{
+  0%    {transform: rotate(0deg);}
+  33%   {transform: rotate(6deg);}
+  66%   {transform: rotate(-6deg);}
+  100%  {transform: rotate(0deg);}
+}
+@keyframes rotate-Close{
+  0%    {transform: rotate(-45deg);}
+  100%  {transform: rotate(45deg);}
+}
+@keyframes spinning-Cog{
+  0%    {transform: translateX(0px) rotate(0deg);}
+  50%   {transform: translateX(70px) rotate(90deg);}
+  100%  {transform: translateX(0px) rotate(0deg);}
+}
+@keyframes wiggle-book{
+  0%    {transform: translateY(5px);}
+  50%   {transform: translateY(-5px);}
+  100%  {transform: translateY(5px);}
+}
+@keyframes translate-Module {
+  50%  {transform: translateX(-50%) translateY(100%);}
+  100%  {transform: translateX(-150%) translateY(100%);}
+}

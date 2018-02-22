@@ -1,0 +1,31 @@
+.hamburger{
+  right: 3em;
+  margin-top: .2em;
+  cursor: pointer;
+  position: absolute;
+  &::before{
+    content: '';
+    display: block;
+    background: #333;
+    width: 25px;
+    height: 4px;
+    top: 0;
+    visibility: visible;
+  }
+  &-center{
+    background: #333;
+    width: 25px;
+    height: 4px;
+    visibility: visible;
+    margin: .2em 0;
+  }
+  &::after{
+    content: '';
+    display: block;
+    background: #333;
+    width: 25px;
+    height: 4px;
+    bottom: 0;
+    visibility: visible;
+  }
+}

@@ -42,7 +42,7 @@
 
       }
       &--left{
-        background: $lightOrange;
+        background: #fff;
         width: 70%;
         float: left;
 
@@ -52,7 +52,7 @@
 
       }
       &--right{
-        background: #ffeadc;
+        background: #fff;
         width: 30%;
 
       }
